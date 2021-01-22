@@ -2,18 +2,19 @@ import React from 'react';
 import Gif from './Gif';
 import styled from 'styled-components';
 
-const Gifs = ({gifs}) => {
-console.log('gifs props:', gifs);
+const Gifs = ({category, gifs}) => {
 
 const Gifs = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items:center;
 ` 
 
     return(
         <>
+        <h4>{category}</h4>
                 <Gifs>
             {
                 gifs.map(gif => 
