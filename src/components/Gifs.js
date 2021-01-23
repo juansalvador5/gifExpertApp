@@ -2,7 +2,7 @@ import React from 'react';
 import Gif from './Gif';
 import styled from 'styled-components';
 
-const Gifs = ({category, gifs}) => {
+const Gifs = ({gifs}) => {
 
 const Gifs = styled.div`
     width: 100%;
@@ -14,8 +14,7 @@ const Gifs = styled.div`
 
     return(
         <>
-        <h4>{category}</h4>
-                <Gifs>
+            <Gifs>
             {
                 gifs.map(gif => 
                         <Gif 
@@ -25,7 +24,7 @@ const Gifs = styled.div`
                         />
                     ) 
             }
-                </Gifs>
+            </Gifs>
         </>
     )
 }

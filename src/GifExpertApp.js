@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import AddCategory from './components/AddCategory';
-import GifGrid from './components/GifGrid'
+import GifGrid from './components/GifGrid';
+import {getGift} from './services/gifsServices';
 
 const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState('');
     console.log('categories :', categories);
     const [gifs, setGifs] = useState([])
+    console.log('gifs :', gifs);
 
     const handlegetGift = (categories) =>{
-            const API_KEY = 'WRQ4G53O8E5HBPVgrsWpBJEBJPp7t7u7'
-            const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${categories}&limit=10`
-            
-            return fetch(URL)
-                .then(response => response.json()).then(data => {setGifs(data.data)})
+        getGift(categories)
+                .then(data => {setGifs(data)})
     }
 
     const handleRequest = (nameGifs) =>{
+    console.log('nameGifs :', nameGifs);
+
         setCategories(nameGifs)
         handlegetGift(nameGifs)
     }
@@ -24,15 +25,10 @@ const GifExpertApp = () => {
     return(
         <>
             <h2>Gif Expert App</h2>
-            <AddCategory 
-                onSubmit={handleRequest} 
-                />
+            <AddCategory onSubmit={handleRequest} />
             <hr />
 
-            <GifGrid
-                category={categories}
-                gifs={gifs}
-            />
+            <GifGrid gifs={gifs} />
         </>
     )
 }

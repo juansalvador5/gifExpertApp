@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Gifs from './Gifs';
 
-const GifGrid = ({category, gifs}) => {
+const GifGrid = ({gifs}) => {
 
    
     return(
         <>
-            <Gifs category={category} gifs={gifs} />
+            <Gifs gifs={gifs} />
         </>
     )
 }
 
 GifGrid.propTypes = {
-    category: PropTypes.array.isRequired,
 }
 
 export default GifGrid;
