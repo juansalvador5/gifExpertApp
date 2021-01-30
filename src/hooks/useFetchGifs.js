@@ -7,7 +7,7 @@ export const useFetchGifs = (categories) => {
         data:[],
         loading: true,
     })
-
+    
     getGift(categories)
         .then(data => {
             setState({
@@ -16,6 +16,5 @@ export const useFetchGifs = (categories) => {
             });
         });
 
-
     return state;
-}
+}; 

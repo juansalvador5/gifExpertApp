@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import {Input, Form} from './AddCategorStyle'
+
 
 const AddCategory = (props) => {
     const {onSubmit} = props;
@@ -21,13 +23,14 @@ const AddCategory = (props) => {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input
+        <Form onSubmit={handleSubmit}>
+            <Input
                 type="text"
                 value={inputValue}
                 onChange={handleInputValue}
+                placeholder="Name"
             />
-        </form>
+        </Form>
     )
 }
 

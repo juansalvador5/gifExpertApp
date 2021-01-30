@@ -1,20 +1,12 @@
 import React from 'react';
-import Gif from './Gif';
-import styled from 'styled-components';
+import Gif from '../Gif';
+import { GifsContainer } from './GifsStyle'
 
 const Gifs = ({gifs}) => {
 
-const Gifs = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items:center;
-` 
-
     return(
         <>
-            <Gifs>
+            <GifsContainer>
             {
                 gifs.map(gif => 
                         <Gif 
@@ -24,7 +16,7 @@ const Gifs = styled.div`
                         />
                     ) 
             }
-            </Gifs>
+            </GifsContainer>
         </>
     )
 }
