@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import {getGift} from '../services/gifsServices';
 
@@ -7,8 +7,7 @@ export const useFetchGifs = (categories) => {
         data:[],
         loading: true,
     })
-    
-    getGift(categories)
+        getGift(categories)
         .then(data => {
             setState({
                 data: data,

@@ -11,7 +11,7 @@ const GifGrid = () => {
     const [categories, setCategories] = useState('');
     const {data, loading} = useFetchGifs(categories);
     console.log('data :', data);
-
+    
     const handleRequest = (nameGifs) =>{
         setCategories(nameGifs)
     }
