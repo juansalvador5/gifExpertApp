@@ -1,12 +1,18 @@
 import React from 'react';
-import { Card, Image, H5 } from './GifStyle';
+import PropTypes from 'prop-types'
+import {Image} from './GifStyle';
 
 const Gif = ({image, title}) => {
     return(
         <>
-                <Image src={image} alt={title} />
+            <Image src={image} alt={title} />
         </>
     )
+}
+
+Gif.propTypes = {
+    image: PropTypes.element.isRequired,
+    title: PropTypes.string.isRequired
 }
 
 export default Gif;
