@@ -4,6 +4,7 @@ export const getGift = async(category) => {
     
     const response = await fetch(URL)
     const {data} = await response.json();
-
+    console.log('pepito');
+    
     return data;
 } 
