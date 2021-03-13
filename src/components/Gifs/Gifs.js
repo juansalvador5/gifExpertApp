@@ -6,7 +6,7 @@ const Gifs = ({gifs}) => {
 
     return(
         <>
-            <GifsContainer>
+            <GifsContainer id='gidgsdg'>
             {
                 gifs.map(gif => 
                         <Gif 

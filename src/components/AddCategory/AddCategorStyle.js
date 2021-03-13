@@ -15,4 +15,5 @@ export const Input = styled.input`
 
 export const Form = styled.form`
     min-width: 80%;
+
 `;
